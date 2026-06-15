@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>منديلك دليلك</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#1B5E20;
+    --secondary:#4CAF50;
+    --dark:#071B10;
+    --light:#F5F7F5;
+    --gold:#D4AF37;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8faf8;
+    color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(7,27,16,.7);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 0;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#4CAF50;
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    overflow:hidden;
+
+    background:#071B10;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:#4CAF50;
+
+    border-radius:50%;
+
+    filter:blur(220px);
+
+    top:-200px;
+    right:-200px;
+
+    opacity:.35;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:#1B5E20;
+
+    border-radius:50%;
+
+    filter:blur(200px);
+
+    left:-150px;
+    bottom:-150px;
+
+    opacity:.4;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:20px;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:12px 22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:100px;
+
+    color:white;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    color:white;
+
+    font-size:clamp(3rem,8vw,6rem);
+
+    font-weight:900;
+}
+
+.hero p{
+
+    color:#ddd;
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    margin-top:20px;
+}
+
+.hero-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:100px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    background:#4CAF50;
+    color:white;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(76,175,80,.4);
+}
+
+.btn-outline{
+
+    border:1px solid rgba(255,255,255,.3);
+
+    color:white;
+}
+
+.btn-outline:hover{
+
+    background:white;
+    color:black;
+}
+
+/* SECTION */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    max-width:800px;
+
+    margin:auto auto 50px;
+
+    line-height:2;
+}
+
+/* CARDS */
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+}
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    min-width:220px;
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.15);
+}
+
+.icon{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+.card h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#666;
+
+    line-height:1.8;
+}
+
+/* TEAM */
+
+.team-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.team-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.team-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.team-icon{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact{
+
+    background:linear-gradient(
+    135deg,
+    #1B5E20,
+    #0B3110);
+
+    color:white;
+
+    text-align:center;
+
+    border-radius:40px;
+
+    padding:70px 30px;
+}
+
+.contact h2{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+}
+
+.contact p{
+
+    color:#ddd;
+
+    margin-bottom:30px;
+}
+
+.whatsapp{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #25D366,
+    #18b954);
+
+    color:white;
+
+    padding:18px 35px;
+
+    border-radius:100px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(37,211,102,.4);
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#071B10;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+.nav-links{
+    display:none;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+.hero p{
+    font-size:1rem;
+}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">منديلك دليلك</div>
+
+        <div class="nav-links">
+            <a href="#about">عن المشروع</a>
+            <a href="#categories">الأقسام</a>
+            <a href="#team">الفريق</a>
+            <a href="#contact">التواصل</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🚀 منصة كشفية رقمية متكاملة
+        </div>
+
+        <h1>منديلك دليلك</h1>
+
+        <p>
+            منصة تجمع كل ما يحتاجه أفراد وقادة المجموعات الكشفية
+            من معلومات ومهارات وبيانات وأنشطة تعليمية في مكان واحد.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#categories" class="btn btn-primary">
+                استكشف الأقسام
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            عن المشروع
+        </h2>
+
+        <p class="section-subtitle">
+            يهدف مشروع منديلك دليلك إلى إنشاء مرجع رقمي حديث يخدم
+            الحركة الكشفية من خلال تنظيم المعرفة وتوفير المحتوى
+            التعليمي والبيانات والأنشطة بطريقة سهلة وسريعة.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="categories">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            الأقسام الرئيسية
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">⛺</div>
+                <h3>المعسكرات</h3>
+                <p>التغذية - العهدة - البيوت - النقل والأتوبيسات</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎓</div>
+                <h3>التعليم</h3>
+                <p>فيديوهات تعليمية ومهارات وأنشطة تدريبية.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎉</div>
+                <h3>دليل الحفلات</h3>
+                <p>أفكار وأنشطة ومسابقات وفقرات متنوعة.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📂</div>
+                <h3>داتا المجموعة</h3>
+                <p>إدارة وتنظيم بيانات المجموعة الكشفية.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h3>لعبة كشفية</h3>
+                <p>ألعاب تعليمية وتفاعلية لتنمية المهارات.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="team">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            فريق العمل
+        </h2>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="team-icon">💻</div>
+                <h3>Software Team</h3>
+                <p>تطوير وبرمجة المنصة.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">📊</div>
+                <h3>Data Team</h3>
+                <p>تجميع وتنظيم البيانات.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🔍</div>
+                <h3>Review Team</h3>
+                <p>مراجعة المحتوى وضمان الجودة.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🎨</div>
+                <h3>Media Team</h3>
+                <p>التصميم وصناعة المحتوى.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🛠️</div>
+                <h3>Technical Support</h3>
+                <p>الدعم الفني ومساعدة المستخدمين.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="container">
+
+        <div class="contact" id="contact">
+
+            <h2>تواصل معنا</h2>
+
+            <p>
+                لديك اقتراح أو ترغب بالمشاركة في تطوير المشروع؟
+            </p>
+
+            <a
+            class="whatsapp"
+            href="https://wa.me/201026527027"
+            target="_blank">
+
+            تواصل عبر واتساب
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+Mandilak Dalilak - Prototype Version - Powered By RAHT NETWORK at ST.Mina Shoubra Coptic Orthodox Church
+</footer>
+
+</body>
+</html>
